@@ -53,7 +53,7 @@ Replace the "Part 1" section with:
 - I am Faezeh.
 - I hope to learn how to use machine learning models to analyze data.
 - SQL and LLMs are the topics I am interested to learn about.
-- ["BAAG" is a social rap in Farsi, here is the link to its music video.](https://www.youtube.com/watch?v=BmuqgZ9bj3c&pp=ygUEYmFhZw%3D%3D)
+- "BAAG" is a social rap in Farsi, here is the [link](https://www.youtube.com/watch?v=BmuqgZ9bj3c&pp=ygUEYmFhZw%3D%3D) to its music video.
 
 ### Part 2: Complete the email_hasher.py Script
 The email_hasher.py script should:
