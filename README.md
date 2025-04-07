@@ -50,10 +50,10 @@ This assignment will help you practice:
 
 ### Part 1: Update this README.md
 Replace the "Part 1" section with:
-- A brief introduction about yourself (first name only)
-- What you're hoping to get out of this course
-- Topics you would like to see included
-- A musical recommendation and a link to something about it (song, album, artist)
+- I am Faezeh.
+- I hope to learn how to use machine learning models to analyze data.
+- SQL and LLMs are the topics I am interested to learn about.
+- ["BAAG" is a social rap in Farsi, here is the link to its music video.](https://www.youtube.com/watch?v=BmuqgZ9bj3c&pp=ygUEYmFhZw%3D%3D)
 
 ### Part 2: Complete the email_hasher.py Script
 The email_hasher.py script should:
