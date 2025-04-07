@@ -50,7 +50,7 @@ def write_hash_to_file(hash_value, filename = "hash.email"):
     # 2. Write the hash value to the file
     # 3. Close the file
     with open(filename, "w") as f:
-        print(hash_value, f)
+        print(hash_value, file = f)
 
 def main():
     """
@@ -67,14 +67,16 @@ def main():
 
     else:
         email = sys.argv[1]
-        pattern = re.compile(r"^(?!\.)(?!.*\.\.)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+"
-                r"@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$")
-        if not re.match(pattern, email):
-            print("Error! Please provide a valid email address!")
+        # Check to see that the input is indeed an email address
+        # pattern = re.compile(r"^(?!\.)(?!.*\.\.)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+"
+        #                      r"@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$")
+        # if not re.match(pattern, email):
+        #     print("Warning! Please provide a valid email address!")
 
-        else:
-            hash_value = hash_email(email)
-            write_hash_to_file(hash_value, filename = "hash.email")
+        # else:
+        hash_value = hash_email(email)
+        write_hash_to_file(hash_value, filename = "hash.email")
+        print(hash_value)
 
 if __name__ == "__main__":
     main()
