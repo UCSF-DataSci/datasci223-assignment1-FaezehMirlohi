@@ -14,6 +14,7 @@ Example:
 
 import sys
 import hashlib
+import re
 
 def hash_email(email):
     """
@@ -29,9 +30,14 @@ def hash_email(email):
     # 1. Convert the email string to bytes
     # 2. Create a SHA-256 hash of the email
     # 3. Return the hash in hexadecimal format
-    pass
 
-def write_hash_to_file(hash_value, filename="hash.email"):
+    byte_email = email.encode('UTF-8')
+    hash = hashlib.sha256()
+    hash.update(byte_email)
+    hash = hash.hexdigest()
+    return hash
+
+def write_hash_to_file(hash_value, filename = "hash.email"):
     """
     Write a hash value to a file.
     
@@ -43,7 +49,8 @@ def write_hash_to_file(hash_value, filename="hash.email"):
     # 1. Open the file in write mode
     # 2. Write the hash value to the file
     # 3. Close the file
-    pass
+    with open(filename, "w") as f:
+        print(hash_value, file = f)
 
 def main():
     """
@@ -54,7 +61,22 @@ def main():
     # 2. If not, print an error message and exit with a non-zero status
     # 3. If yes, hash the email address
     # 4. Write the hash to a file named "hash.email"
-    pass
+
+    if len(sys.argv) < 2:
+        print("Error! Please provide an email address!")
+
+    else:
+        email = sys.argv[1]
+        # Check to see that the input is indeed an email address
+        # pattern = re.compile(r"^(?!\.)(?!.*\.\.)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+"
+        #                      r"@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$")
+        # if not re.match(pattern, email):
+        #     print("Warning! Please provide a valid email address!")
+
+        # else:
+        hash_value = hash_email(email)
+        write_hash_to_file(hash_value, filename = "hash.email")
+        print(hash_value)
 
 if __name__ == "__main__":
     main()
